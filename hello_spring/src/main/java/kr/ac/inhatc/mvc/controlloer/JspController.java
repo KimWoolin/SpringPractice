@@ -1,4 +1,4 @@
-package kr.ac.inhatc.mvc;
+package kr.ac.inhatc.mvc.controlloer;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -20,7 +20,8 @@ public class TestController {
 		return ""+service.count();
 	}
 	
-	@RequestMapping("/boardMv")
+	//http://localhost:8000/boardMv
+	@RequestMapping("/boardMv") 
 	public ModelAndView boardMv() {
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("count",service.count());//jsp에서 불러올 어트리뷰트네임,
