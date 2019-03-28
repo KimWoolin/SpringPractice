@@ -9,7 +9,8 @@
 <link type="text/css" rel="stylesheet"
 	href="resource/res/css/sample.css" />
 
-<script src="http://code.jquery.com/jquery-Latest.min.js"></script>
+<%--제이쿼리 사용 --%>
+<script src="http://code.jquery.com/jquery-Latest.min.js"></script> 
 <script type="text/javaScript" language="javascript" defer="defer">
 	//ready function
 	$(function(){
@@ -26,7 +27,7 @@
 			<!-- 타이틀 -->
 			<div id="title">
 				<ul>
-					<li><img src="/resource/res/img/title_dot.gif" alt="" />과목 목록</li>
+					<li><img src="/resource/res/img/title_dot.gif" alt="" />과목 목록 </li>
 					<li id="cnt">페이지 방문수 : ${count}</li>
 				</ul>
 			</div>
@@ -70,7 +71,31 @@
 						<th align="center">설명</th>
 						<th align="center">등록자</th>
 					</tr>
-
+					
+					<%-- 4주차 과제 --%>
+					<%!
+						int rowcnt;
+					%>
+					<%
+					//<c:set var="rowcnt" value="${param.rowcnt}"/>
+						rowcnt=(int)request.getAttribute("rowcnt");
+						for(int i=1;i<=rowcnt;i++){
+					%>
+						<tr>
+							<td align="center" class="listtd"> <%=i%> </td>
+							<td align="center" class="listtd"><a href="">Spring</a></td>
+							<td align="left" class="listtd">2학년&nbsp;</td>
+							<td align="center" class="listtd">Y&nbsp;</td>
+							<td align="center" class="listtd">기초과목&nbsp;</td>
+							<td align="center" class="listtd">관리자&nbsp;</td>
+						</tr>
+					<%
+						}
+					%>
+					
+					
+					
+					<%--
 					<tr>
 						<td align="center" class="listtd">1</td>
 						<td align="center" class="listtd"><a href="">C</a></td>
@@ -160,7 +185,7 @@
 						<td align="center" class="listtd">일반과목&nbsp;</td>
 						<td align="center" class="listtd">관리자&nbsp;</td>
 					</tr>
-
+					 --%>
 				</table>
 			</div>
 			<!-- /List -->
