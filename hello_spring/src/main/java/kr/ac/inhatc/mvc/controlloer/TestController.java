@@ -22,15 +22,25 @@ public class TestController {
 		return ""+service.count();
 	}
 	
-
-	//http://localhost:8000/boardMv
-	@RequestMapping("/boardMv") 
-	public ModelAndView boardMv(Model model, int n) {
-		model.addAttribute("rowcnt",n);
+	//http://localhost:8000/boardMv?n=2
+		@RequestMapping("/boardMv") 
+		public ModelAndView boardMv(Model model, int n) {
+			model.addAttribute("rowcnt",n);
+			ModelAndView mv = new ModelAndView();
+			mv.addObject("count",service.count());//jsp에서 불러올 어트리뷰트네임,
+			mv.setViewName("board");//어떤 뷰에 뿌려줄 것인가
+			return mv; //보드에 데이터 전달 > 보드에서 데이터 출력 어떻게? > board로 넘어가서 설정
+		}
+	
+	
+	//http://localhost:8000/boardTb?num=5
+	@RequestMapping("/boardTb") 
+	public ModelAndView boardTb(Model model,int num) {
+		model.addAttribute("num",num);
 		ModelAndView mv = new ModelAndView();
-		mv.addObject("count",service.count());//jsp에서 불러올 어트리뷰트네임,
-		mv.setViewName("board");//어떤 뷰에 뿌려줄 것인가
-		return mv; //보드에 데이터 전달 > 보드에서 데이터 출력 어떻게? > board로 넘어가서 설정
+		mv.addObject("count",service.count());
+		mv.setViewName("btable");
+		return mv; 
 	}
 	
 	

@@ -13,12 +13,12 @@
 <script src="http://code.jquery.com/jquery-Latest.min.js"></script> 
 <script type="text/javaScript" language="javascript" defer="defer">
 	//ready function
-	$(function(){
+	/*$(function(){
 		alert($("#cnt").text());
 		});//제이쿼리 잘 가져왔는지 확인>alert잘 뜨면 제이쿼리 잘 불러온것
+	*/
 </script>
 </head>
-
 <body
 	style="text-align: center; margin: 0 auto; display: inline; padding-top: 100px;">
 	<form id="listForm" name="listForm" action="/sample/" method="post">
@@ -72,7 +72,7 @@
 						<th align="center">등록자</th>
 					</tr>
 					
-					<%-- 4주차 과제 --%>
+					<%-- 4주차 과제(request parameter방법) --%>
 					<%!
 						int rowcnt;
 					%>
@@ -92,8 +92,6 @@
 					<%
 						}
 					%>
-					
-					
 					
 					<%--
 					<tr>
