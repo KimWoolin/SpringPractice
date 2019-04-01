@@ -15,10 +15,10 @@
 
  	$(function(){
  	 	var num = "<c:out value='${param.num}'/>";//num값 넘겨받는건 성공
- 	 	var html = '<tr><td "width=430" align="center" class="listtd">1</td><td align="center" class="listtd"><a href="">C</a></td><td align="left" class="listtd">2학년&nbsp;</td><td align="center" class="listtd">Y&nbsp;</td><td align="center" class="listtd">기초과목&nbsp;</td><td align="center" class="listtd">관리자&nbsp;</td></tr>';
+ 	 	var html = '<tr><td align="center" class="listtd">1</td><td align="center" class="listtd"><a href="">C</a></td><td align="left" class="listtd">2학년&nbsp;</td><td align="center" class="listtd">Y&nbsp;</td><td align="center" class="listtd">기초과목&nbsp;</td><td align="center" class="listtd">관리자&nbsp;</td></tr>';
 
  	 	for(i=1;i<=${num};i++)
-			$("#table").append(html);
+			$("#tab").append(html);
  	 	});
 	 	
 </script>
@@ -55,8 +55,8 @@
 				</ul>
 			</div>
 			<!-- List -->
-			<div id="table">
-				<table width="100%" border="0" cellpadding="0" cellspacing="0"
+			<div id ="table">
+				<table id="tab" width="100%" border="0" cellpadding="0" cellspacing="0"
 					summary="">
 					<caption style="visibility: hidden"></caption>
 					<colgroup>
