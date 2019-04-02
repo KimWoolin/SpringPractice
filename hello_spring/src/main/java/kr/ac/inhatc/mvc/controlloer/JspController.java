@@ -56,7 +56,7 @@ public class JspController {
 			mv.addObject("cnt",5);
 			return mv;
 		*/
-
+	
 		@RequestMapping("/jstl")
 		public ModelAndView jstl(BoardDto boardDto) {
 			ModelAndView mv = new ModelAndView();
@@ -66,6 +66,12 @@ public class JspController {
 			return mv;
 	}
 		
+	
+		//http://localhost:8000/jstlBd?rowcnt=4
+		@RequestMapping("/jstlBd")
+		public ModelAndView jstlBd() {
+			ModelAndView mv = new ModelAndView();
+			mv.setViewName("board");
+			return mv;
+	}
 }
-
-
