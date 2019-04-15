@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.ac.inhatc.mvc.mapper.BoardMapper">
+	<select id="getName" resultType="String">
+		select member from test
+	</select>
+	<select id="selectSubjectList" parameterType="String" resultType="Map">
+		SELECT
+			ID, SUBJECT, grade, DESCRIPTION, USE_YN useYn, REG_USER regUser
+			FROM SAMPLE
+			WHERE 1=1
+			<if test="value !=null and value !=''">
+				AND subject LIKE CONCAT('%',#{value},'%')
+			</if>
+	</select>
+</mapper>
